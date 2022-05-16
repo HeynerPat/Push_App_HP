@@ -10,26 +10,31 @@ class PushNotificationService {
   static FirebaseMessaging messaging = FirebaseMessaging.instance;
   static String? token;
   static StreamController<String> _messageStream =
-      new StreamController.broadcast();
-
+      new StreamController<String>.broadcast();
   static Stream<String> get messagesStream => _messageStream.stream;
 
   static Future _backgroundHandler(RemoteMessage message) async {
     // print('onBackground Handler ${message.messageId}');
-    print(message.data);
-    _messageStream.add(message.notification?.body ?? 'No title');
+    //print(message.data);
+    //_messageStream.add(message.notification?.body ?? 'No title');
+    final argumento = message.data['comida'] ?? 'no-data';
+    _messageStream.sink.add(argumento);
   }
 
   static Future _onMessageHandler(RemoteMessage message) async {
     //print('onMessage Handler ${message.messageId}');
-    print(message.data);
-    _messageStream.add(message.notification?.body ?? 'No title');
+    //print(message.data);
+    //_messageStream.add(message.notification?.body ?? 'No title');
+    final argumento = message.data['comida'] ?? 'no-data';
+    _messageStream.sink.add(argumento);
   }
 
   static Future _onMessageOpenApp(RemoteMessage message) async {
     //print('onMessageOpenApp Handler ${message.messageId}');
-    print(message.data);
-    _messageStream.add(message.notification?.body ?? 'No title');
+    //print(message.data);
+    //_messageStream.add(message.notification?.body ?? 'No title');
+    final argumento = message.data['comida'] ?? 'no-data';
+    _messageStream.sink.add(argumento);
   }
 
   static Future initializeApp() async {

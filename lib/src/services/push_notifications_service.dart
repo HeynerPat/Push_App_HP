@@ -55,3 +55,20 @@ class PushNotificationService {
     _messageStream.close();
   }
 }
+/*
+Para POSTMAN
+{
+   "notification": {
+         "body": "Presiona para entrar",
+         "title": "Esta es una notification desde Postman"
+       },
+       "priority": "high",
+       "data": {
+         "click_action": "FLUTTER_NOTIFICATION_CLICK",
+         "id": "1",
+         "status": "done",
+         "comida": "Pizza"
+       },
+       "to": "fwsmDLV0Tu-hNWQG4fLnb9:APA91bG-iBWlNafZdxs403tPoJ3L4UuuXoRcu426OlmiJmA-iSyPlYd8qsWwV3Ttr0jc_tyl6nSz3C_QPzdoiPu2xBVDV-GPJv2zJPVRbGThvQL9rdfU38kgX60r7c_tc6Hllj5sJ3uL"
+}
+*/
